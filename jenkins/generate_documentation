@@ -7,7 +7,7 @@ export PUBLIC_DIR=$JENKINS_HOME/public_html/api
 
 mkdir $REPO_DIR
 
-find . -maxdepth 1 -mindepth 1 -not -name $JENKINS_SCRIPTS -not -name $REPO_DIR -exec mv '{}' $REPO_DIR \;
+find . -maxdepth 1 -mindepth 1 -not -name ci-scripts -not -name $REPO_DIR -exec mv '{}' $REPO_DIR \;
 
 source /opt/ros/hydro/setup.bash
-$WORKSPACE/jenkins_scripts/generate_doc.py $REPO_DIR $WORKSPACE/doc 
+$WORKSPACE/$JENKINS_SCRIPTS/generate_doc.py $REPO_DIR $WORKSPACE/doc 

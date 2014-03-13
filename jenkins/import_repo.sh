@@ -9,7 +9,7 @@ AUTHOR_ID="$AUTHOR_NAME <$AUTHOR_EMAIL>"
 COMMIT_MESSAGE="$(git show -s --format=%B HEAD)"
 
 mkdir $REPO_DIR
-find . -maxdepth 1 -mindepth 1 -not -name $JENKINS_SCRIPTS -not -name $REPO_DIR -exec mv '{}' $REPO_DIR \;
+find . -maxdepth 1 -mindepth 1 -not -name ci-scripts -not -name $REPO_DIR -exec mv '{}' $REPO_DIR \;
 
 git clone git@github.com:pandora-auth-ros-pkg/$PUBLIC_REPO.git
 cd $PUBLIC_REPO
