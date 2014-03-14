@@ -8,6 +8,8 @@ AUTHOR_EMAIL="$(git show -s --format=%ae)"
 AUTHOR_ID="$AUTHOR_NAME <$AUTHOR_EMAIL>"
 COMMIT_MESSAGE="$(git show -s --format=%B HEAD)"
 
+echo '\033[1;31m'Importing repo $REPO_NAME to $PUBLIC_REPO'\033[0m'
+
 mkdir $REPO_DIR
 find . -maxdepth 1 -mindepth 1 -not -name ci-scripts -not -name $REPO_DIR -exec mv '{}' $REPO_DIR \;
 
