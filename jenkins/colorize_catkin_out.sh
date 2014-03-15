@@ -19,7 +19,7 @@ while read data; do
 -e "s%^\(\[.*\%\]\)\( Generating.*$\)%\1$blu\2$blk%" \
 -e "s%^\(#### Running command: \)\(\".*\"\)\( in \)\(\".*\"$\)%$blu\1$cyn\2$blu\3$cyn\4$blk%" \
 -e "s%^####%$blu&$blk%" \
--e "s%^.*: error: .*$%$err&$blk%" \
+-e "s%^.*: \(fatal \)*error: .*$%$err&$blk%" \
 -e "s%^.*: warning: .*$%$war&$blk%"  \
 -e "s%^\(\[==========\]\|\[----------\]\|\[ *RUN *\]\|\[ *OK *\]\|\[ *PASSED *\]\)%$grn&$blk%" \
 -e "s%^\[ *FAILED *\]%$red&$blk%" ;
