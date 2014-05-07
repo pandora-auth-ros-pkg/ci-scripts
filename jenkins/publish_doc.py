@@ -44,3 +44,4 @@ def publish_doc(packages, output_dir):
     repos[repo_name] = packages
     doc = open(repos_file, 'w')
     doc.write(yaml.dump(repos))
+    doc.close()
