@@ -21,5 +21,5 @@ mkdir $REPO_NAME
 find $WORKSPACE/$REPO_DIR -maxdepth 1 -mindepth 1 -not -name .git -exec cp -r '{}' $REPO_NAME \;
 
 git add -A
-git commit --author="$AUTHOR_ID" -m "$COMMIT_MESSAGE"
+git diff-index --quiet HEAD || git commit --author="$AUTHOR_ID" -m "$COMMIT_MESSAGE"
 git push origin hydro-devel
