@@ -23,3 +23,6 @@ find $WORKSPACE/$REPO_DIR -maxdepth 1 -mindepth 1 -not -name .git -exec cp -r '{
 git add -A
 git diff-index --quiet HEAD || git commit --author="$AUTHOR_ID" -m "$COMMIT_MESSAGE"
 git push origin hydro-devel
+
+# Update repos.yml
+$WORKSPACE/$JENKINS_SCRIPTS/pandoradep/update_repos.py $WORKSPACE/$REPO_DIR $REPO_NAME $WORKSPACE/$JENKINS_SCRIPTS/pandoradep/repos.yml
