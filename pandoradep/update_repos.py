@@ -33,9 +33,7 @@ else:
 
   # Commit changes
   scripts_path = os.getenv('JENKINS_SCRIPTS')
-  cmd = 'cd ' + scripts_path
-  print '+', cmd
-  check_call(cmd, shell=True)
+  os.chdir(scripts_path)
   cmd = 'git add -u'
   print '+', cmd
   check_call(cmd, shell=True)
