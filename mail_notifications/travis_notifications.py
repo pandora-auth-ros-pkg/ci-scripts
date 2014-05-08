@@ -7,11 +7,15 @@ import smtp_client
 import github_api
 import email
 import time
+import os
 
 default_recipients = ['Chris Zalidis <zalidis@gmail.com>']
 
 def get_credentials():
-  doc = open('credentials.yml', 'r')
+  credentials_file = os.getenv('CREDENTIALS_FILE')
+  if not credentials_file:
+    credentials_file = 'credentials.yml'
+  doc = open(credentials_file, 'r')
   credentials = yaml.safe_load(doc)
   doc.close()
 
