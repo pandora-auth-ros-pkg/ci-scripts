@@ -22,7 +22,7 @@ for pkg in pkgs:
   depends = depends.union(map(str, pkgs[pkg].build_depends))
   depends = depends.union(map(str, pkgs[pkg].exec_depends))
 
-response = urllib2.urlopen('https://raw.githubusercontent.com/czalidis/ci-scripts/master/pandoradep/repos.yml')
+response = urllib2.urlopen('https://raw.github.com/pandora-auth-ros-pkg/ci-scripts/master/pandoradep/repos.yml')
 repos = yaml.safe_load(response.read())
 
 repos_to_fetch = set([])
