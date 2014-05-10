@@ -1,5 +1,5 @@
-pandora_common: [watchdog_communications, watchdog, state_manager, remote_mutex, pandora_common,
-  state_manager_communications, remote_mutex_communications]
+pandora_common: [remote_mutex_communications, remote_mutex, common_communications,
+  state_manager, state_manager_communications, pandora_common, watchdog, watchdog_communications]
 pandora_control: [pandora_laser_control, pandora_motor_control, pandora_control, pandora_kinect_control]
 pandora_data_fusion: [pandora_data_fusion_launchers, pandora_victim_fusion, pandora_data_fusion,
   data_fusion_communications, pandora_alert_handler]
