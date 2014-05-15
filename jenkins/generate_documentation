@@ -10,4 +10,4 @@ mkdir $REPO_DIR
 find . -maxdepth 1 -mindepth 1 -not -name ci-scripts -not -name $REPO_DIR -exec mv '{}' $REPO_DIR \;
 
 source /opt/ros/hydro/setup.bash
-$WORKSPACE/$JENKINS_SCRIPTS/jenkins/generate_doc.py $REPO_DIR $WORKSPACE/doc 
+$JENKINS_SCRIPTS/jenkins/generate_doc.py $REPO_DIR $WORKSPACE/doc 

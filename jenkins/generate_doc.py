@@ -12,6 +12,7 @@ import sys
 import commands
 import argparse
 from publish_doc import publish_doc
+import generate_non_ros_doc
 
 parser = argparse.ArgumentParser(description='Generate documentation')
 parser.add_argument('root_of_pkgs', help='The root directory of packages')
@@ -44,5 +45,18 @@ for package in package_dirs:
     file = open(os.path.join(out_path,'html/.htaccess'), 'w')
     file.write('DirectoryIndex index-msg.html\n')
     file.close()  
+
+# we are documenting a non ros package
+if not package_dirs:
+  root, dirs, files = next(os.walk(args.root_of_pkgs))
+
+  if '.git' in dirs:
+    dirs.remove('.git')
+
+  for package in dirs:
+    package_dirs[package] = os.path.join(root, package)
+    out_path = os.path.join(args.output_dir, package)
+    
+    generate_non_ros_doc.generate_doxygen(package_dirs[package], out_path)
 
 publish_doc(package_dirs.keys(), args.output_dir)
