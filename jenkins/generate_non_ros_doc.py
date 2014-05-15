@@ -40,11 +40,13 @@ def generate_doxygen(path, output_dir):
   conf_file = os.path.join(path, 'manifest.yaml')
   if not os.path.isfile(conf_file):
     print '*** Package %s does not contain a manifest.yaml file so we will not generate documentation. ***' % package
-    return
+    return False 
     
   manifest = PackageInfo(conf_file)
 
-  doxygenator.generate_doxygen(path, package, manifest, build_params, output_dir, False) 
+  doxygenator.generate_doxygen(path, package, manifest, build_params, output_dir, False)
+
+  return True
 
 
 if __name__ == '__main__':

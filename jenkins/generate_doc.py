@@ -57,6 +57,8 @@ if not package_dirs:
     package_dirs[package] = os.path.join(root, package)
     out_path = os.path.join(args.output_dir, package)
     
-    generate_non_ros_doc.generate_doxygen(package_dirs[package], out_path)
+    exists = generate_non_ros_doc.generate_doxygen(package_dirs[package], out_path)
+    if not exists:
+      package_dirs.pop(package, None)
 
 publish_doc(package_dirs.keys(), args.output_dir)
