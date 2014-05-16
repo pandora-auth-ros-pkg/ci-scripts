@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 '''
 script for generating documentation automatically
-using rosdoc_lite, given a collection of ros packages
+using rosdoc_lite, given a collection of ros  or non-ros packages.
+
+In order to create documentation for non-ros packages a manifest.yaml
+file needs to be present.
 
 USAGE: ./generate_doc.py <path_to_root_of_pkgs> <output dir>
 
@@ -22,10 +25,15 @@ args = parser.parse_args()
 rosdoc = 'rosdoc_lite '
 
 package_dirs = {}
+non_package_dirs = {}
 
 for root, dirs, files in os.walk(args.root_of_pkgs):
   if 'package.xml' in files:
     package_dirs[os.path.basename(root)] = root
+
+  # for non ros packages try to find a manifest.yaml file
+  if 'manifest.yaml' in files:
+    non_package_dirs[os.path.basename(root)] = root
 
 if not os.path.isdir(args.output_dir):
   os.mkdir(args.output_dir)
@@ -46,19 +54,9 @@ for package in package_dirs:
     file.write('DirectoryIndex index-msg.html\n')
     file.close()  
 
-# we are documenting a non ros package
-if not package_dirs:
-  root, dirs, files = next(os.walk(args.root_of_pkgs))
+# we are documenting non ros packages
+for package in non_package_dirs:
+  out_path = os.path.join(args.output_dir, package)
+  generate_non_ros_doc.generate_doxygen(non_package_dirs[package], out_path)
 
-  if '.git' in dirs:
-    dirs.remove('.git')
-
-  for package in dirs:
-    package_dirs[package] = os.path.join(root, package)
-    out_path = os.path.join(args.output_dir, package)
-    
-    exists = generate_non_ros_doc.generate_doxygen(package_dirs[package], out_path)
-    if not exists:
-      package_dirs.pop(package, None)
-
-publish_doc(package_dirs.keys(), args.output_dir)
+publish_doc(package_dirs.keys() + non_package_dirs.keys(), args.output_dir)
