@@ -18,7 +18,7 @@ pandora_navigation: [pandora_navigation, pandora_target_selector, target_selecto
   pandora_navigation_communications, pandora_move_base, pandora_navigation_common,
   pandora_path_planner]
 pandora_slam: [pandora_slam, pandora_slam_3d, pandora_pose_estimation, pandora_slam_2d]
-pandora_vision: [pandora_vision_landoltc, pandora_vision_launchers, pandora_vision_motion,
-  pandora_vision_face, pandora_vision_hole_detector, pandora_vision_datamatrix, pandora_vision,
-  vision_communications, pandora_vision_hazmat, pandora_vision_qrcode]
+pandora_vision: [pandora_vision_landoltc, pandora_vision_launchers, pandora_vision_qrcode,
+  pandora_vision_face, pandora_vision_predator, pandora_vision_hole_detector, pandora_vision_datamatrix,
+  pandora_vision, vision_communications, pandora_vision_hazmat, pandora_vision_motion]
 pandora_visualization: [pandora_visualization]
