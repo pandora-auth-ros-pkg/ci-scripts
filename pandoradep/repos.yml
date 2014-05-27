@@ -9,9 +9,8 @@ pandora_fsm: [fsm_communications, pandora_fsm]
 pandora_gazebo: [pandora_gazebo, pandora_gazebo_plugins, pandora_gazebo_interface,
   pandora_gazebo_worlds, pandora_gazebo_controllers]
 pandora_hardware_interface: [pandora_dynamixel_hardware_interface, pandora_linear_motor_hardware_interface,
-  pandora_arm_hardware_interface, controllers_and_sensors_communications, pandora_hardware_tools,
-  pandora_imu_hardware_interface, pandora_xmega_hardware_interface, pandora_motor_hardware_interface,
-  pandora_hardware_interface]
+  pandora_arm_hardware_interface, pandora_hardware_tools, pandora_imu_hardware_interface,
+  pandora_xmega_hardware_interface, pandora_motor_hardware_interface, pandora_hardware_interface]
 pandora_launchers: [pandora_launchers]
 pandora_models: [pandora_sensors_description, pandora_models, pandora_robots_description]
 pandora_navigation: [pandora_navigation_msgs, pandora_navigation, pandora_move_base,
