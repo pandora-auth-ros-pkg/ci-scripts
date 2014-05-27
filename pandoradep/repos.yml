@@ -14,9 +14,8 @@ pandora_hardware_interface: [pandora_dynamixel_hardware_interface, pandora_linea
   pandora_hardware_interface]
 pandora_launchers: [pandora_launchers]
 pandora_models: [pandora_sensors_description, pandora_models, pandora_robots_description]
-pandora_navigation: [pandora_navigation, pandora_target_selector, target_selector_communications,
-  pandora_navigation_communications, pandora_move_base, pandora_navigation_common,
-  pandora_path_planner]
+pandora_navigation: [pandora_navigation_msgs, pandora_navigation, pandora_move_base,
+  pandora_local_planner]
 pandora_slam: [pandora_slam, pandora_slam_3d, pandora_pose_estimation, pandora_slam_2d]
 pandora_vision: [pandora_vision_landoltc, pandora_vision_launchers, pandora_vision_qrcode,
   pandora_vision_face, pandora_vision_predator, pandora_vision_hole_detector, pandora_vision_datamatrix,
