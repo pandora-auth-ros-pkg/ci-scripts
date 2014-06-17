@@ -20,3 +20,4 @@ pandora_vision: [pandora_vision_landoltc, pandora_vision_launchers, pandora_visi
   pandora_vision_face, pandora_vision_predator, pandora_vision_hole_detector, pandora_vision_datamatrix,
   pandora_vision, vision_communications, pandora_vision_hazmat, pandora_vision_motion]
 pandora_visualization: [pandora_visualization]
+pandora_testing: [pandora_testing, pandora_testing_tools, pandora_integration_testing, pandora_dummy_motor_controller]
