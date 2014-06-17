@@ -5,7 +5,7 @@ pandora_data_fusion: [pandora_data_fusion, pandora_data_fusion_launchers, pandor
   pandora_sensor_processing, pandora_alert_handler]
 pandora_diagnostics: [pandora_diagnostics_launchers, pandora_interface_diagnostics,
   pandora_bounds_diagnostics, interface_tester]
-pandora_fsm: [fsm_communications, pandora_fsm]
+pandora_fsm: [pandora_fsm]
 pandora_gazebo: [pandora_gazebo, pandora_gazebo_description, pandora_gazebo_controllers,
   pandora_gazebo_plugins, pandora_gazebo_interface, pandora_gazebo_worlds]
 pandora_hardware_interface: [pandora_dynamixel_hardware_interface, pandora_linear_motor_hardware_interface,
@@ -15,10 +15,11 @@ pandora_launchers: [pandora_launchers]
 pandora_models: [pandora_sensors_description, pandora_models, pandora_robots_description]
 pandora_navigation: [pandora_navigation_msgs, pandora_navigation, pandora_move_base,
   pandora_local_planner]
+pandora_rqt_gui: [pandora_rqt_gui]
 pandora_slam: [pandora_slam, pandora_slam_3d, pandora_pose_estimation, pandora_slam_2d]
+pandora_testing: [pandora_testing, pandora_testing_tools, pandora_integration_testing,
+  pandora_dummy_motor_controller]
 pandora_vision: [pandora_vision_landoltc, pandora_vision_launchers, pandora_vision_qrcode,
   pandora_vision_face, pandora_vision_predator, pandora_vision_hole_detector, pandora_vision_datamatrix,
   pandora_vision, vision_communications, pandora_vision_hazmat, pandora_vision_motion]
 pandora_visualization: [pandora_visualization]
-pandora_testing: [pandora_testing, pandora_testing_tools, pandora_integration_testing, pandora_dummy_motor_controller]
-pandora_rqt_gui: [pandora_rqt_gui]
