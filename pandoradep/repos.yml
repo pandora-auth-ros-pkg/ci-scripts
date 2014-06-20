@@ -1,5 +1,6 @@
-pandora_common: [remote_mutex_communications, remote_mutex, pandora_common, pandora_common_msgs,
-  state_manager, state_manager_communications, watchdog, watchdog_communications]
+pandora_common: [remote_mutex_communications, remote_mutex, kinect_movement_filter,
+  pandora_common, pandora_common_msgs, state_manager, state_manager_communications,
+  watchdog, watchdog_communications]
 pandora_control: [pandora_control, pandora_stabilizer, pandora_motor_control, pandora_end_effector_planner]
 pandora_data_fusion: [pandora_data_fusion_msgs, pandora_sensor_processing, pandora_data_fusion_launchers,
   pandora_sensor_coverage, pandora_data_fusion, pandora_alert_handler]
