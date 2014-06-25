@@ -1,3 +1,4 @@
+pandora_audio: []
 pandora_common: [remote_mutex_communications, remote_mutex, kinect_movement_filter,
   pandora_common, pandora_common_msgs, state_manager, state_manager_communications,
   watchdog, watchdog_communications]
@@ -22,6 +23,6 @@ pandora_testing: [pandora_testing, pandora_testing_tools, pandora_integration_te
   pandora_dummy_motor_controller]
 pandora_vision: [pandora_vision_landoltc, pandora_vision_launchers, pandora_vision_qrcode,
   pandora_vision_face, pandora_vision_predator, pandora_vision_hole_detector, pandora_vision_datamatrix,
-  pandora_vision, vision_communications, pandora_vision_hazmat, pandora_vision_motion]
+  pandora_vision, vision_communications, pandora_vision_hazmat, pandora_vision_support,
+  pandora_vision_motion]
 pandora_visualization: [pandora_visualization]
-pandora_audio: []
