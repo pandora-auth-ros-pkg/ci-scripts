@@ -21,8 +21,8 @@ pandora_rqt_gui: [pandora_rqt_gui]
 pandora_slam: [pandora_slam, pandora_slam_3d, pandora_pose_estimation, pandora_slam_2d]
 pandora_testing: [pandora_testing, pandora_testing_tools, pandora_integration_testing,
   pandora_dummy_motor_controller]
-pandora_vision: [pandora_vision_landoltc, pandora_vision_launchers, pandora_vision_qrcode,
-  pandora_vision_face, pandora_vision_predator, pandora_vision_hole_detector, pandora_vision_datamatrix,
+pandora_vision: [pandora_vision_landoltc, pandora_vision_launchers, pandora_vision_victim,
+  pandora_vision_qrcode, pandora_vision_predator, pandora_vision_hole_detector, pandora_vision_datamatrix,
   pandora_vision, vision_communications, pandora_vision_hazmat, pandora_vision_support,
   pandora_vision_motion]
 pandora_visualization: [pandora_visualization]
