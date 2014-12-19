@@ -44,11 +44,11 @@ def configure(vm, args):
     raise
 
 @task
-def run_build():
-  with cd('/vagrant'), show('output'), hide('running', 'warnings'):
+def run_build(repo_name):
+  with cd('/vagrant/' + repo_name), show('output'), hide('running', 'warnings'):
     # this is needed in order to add github to known_hosts
     run('ssh-keyscan -H github.com >> ~/.ssh/known_hosts')
-    result = run('./run.bash', pty=True)
+    result = run('$BUILD_HOME/run.bash', pty=True)
 
   return result.return_code
 
@@ -100,7 +100,7 @@ if __name__ == '__main__':
   configure(vm, args)
 
   # run the run.bash in the vm
-  status = execute(run_build)
+  status = execute(run_build, os.path.basename(os.path.abspath(args.repo_root)))
 
   # cleanup
   vagrant_destroy(vm)

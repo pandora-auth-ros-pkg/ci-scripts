@@ -18,6 +18,7 @@ do
   eval $command
   status=$?
   if [ $status -ne 0 ]; then
+    echo -e "\n${LIGHT_RED}Error encountered during system configuration, aborting...${DEFAULT}"
     exit 1
   fi
 done
