@@ -22,7 +22,7 @@ def vagrant_up(vm):
 
 def vagrant_destroy(vm):
   try:
-    print('\nDestroying  vagrant...')
+    print('\nDestroying vagrant...')
     vm.destroy()
   except subprocess.CalledProcessError as e:
     print('Sometring went wrong while "vagrant destroy:"', e)
@@ -46,28 +46,33 @@ def configure(vm, args):
 @task
 def run_build():
   with cd('/vagrant'), show('output'), hide('running', 'warnings'):
-    # this is needed in order to add github to known_hosts; find a more elegant way
-    #run('ssh -T git@github.com -oStrictHostKeyChecking=no')
+    # this is needed in order to add github to known_hosts
     run('ssh-keyscan -H github.com >> ~/.ssh/known_hosts')
     result = run('./run.bash', pty=True)
 
   return result.return_code
 
 
+
 if __name__ == '__main__':
 
-  parser = argparse.ArgumentParser(description="""Setups a vagrant instance and starts executing
-                              commands in it, based on a .jenkins.yml file located in the root directory.""")
+  parser = argparse.ArgumentParser(description="""Setups a vagrant instance and starts
+                                  executing commands in it, based on a .jenkins.yml
+                                                  file located in the root directory.""")
   parser.add_argument('root', help='The root directory in which vagrant should deploy.')
   parser.add_argument('repo_root', help='The root directory of the repo that we are testing. \
                                               A .jenkins.yml file should be found there.')
   parser.add_argument('--image', help='The os image that vagrant should use. \
-                                        Default value is "ubuntu/precise64".', default='ubuntu/precise64')
+                                        Default value is "ubuntu/precise64".',
+                                                        default='ubuntu/precise64')
   parser.add_argument('--cpus', help='Number of cpu cores for vagrant to use. \
-                                                              Default value is 2.', default='2')
+                                                              Default value is 2.',
+                                                                default='2')
   parser.add_argument('--memory', help='Amount of memory in MB that vagrant should use. \
-                                                              Default value is 2048.', default='2048')
-  parser.add_argument('--no-forward-agent', help='Disable forward agent when running fabric.', action='store_false')
+                                                              Default value is 2048.',
+                                                              default='2048')
+  parser.add_argument('--no-forward-agent', help='Disable forward agent when running fabric.',
+                                                                            action='store_false')
   args = parser.parse_args()
 
   # test if '.jenkins.yml' file exists
@@ -84,7 +89,7 @@ if __name__ == '__main__':
   # generate run.bash file at root dir
   template_files.prepare_bash(jenkins_file, os.path.join(os.path.abspath(args.root), 'run.bash'))
 
-  # create up a vagrant vm based on the above Vagrantfile
+  # create a vagrant vm based on the above Vagrantfile
   #vm = vagrant.Vagrant(os.path.abspath(args.root), quiet_stdout=False, quiet_stderr=False)
   vm = vagrant.Vagrant(os.path.abspath(args.root))
 
@@ -100,5 +105,6 @@ if __name__ == '__main__':
   # cleanup
   vagrant_destroy(vm)
 
-  sys.exit(status)
+  # execute returns a dic like so: {'vagrant@127.0.0.1:2222': 0}
+  sys.exit(status[env.hosts[0]])
 

@@ -8,10 +8,14 @@ install:
   - rosdep update
   - mkdir -p catkin_ws/src
   - cd catkin_ws/src
-  - git clone git@github.com:pandora-auth-ros-pkg/pandora_common.git
-  #- ln -s /vagrant/pandora_common
+  #- git clone git@github.com:pandora-auth-ros-pkg/pandora_common.git
+  - ln -s /vagrant/pandora_common
   - cd ..
   - rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
   - source /opt/ros/$ROS_DISTRO/setup.bash
 script:
   - catkin_make
+  - source devel/setup.bash
+  - catkin_make roslint
+  - catkin_make run_tests
+  - catkin_test_results build
