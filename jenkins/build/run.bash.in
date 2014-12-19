@@ -1,0 +1,44 @@
+#!/bin/bash
+
+GREEN="\033[0;32m"
+LIGHT_GREEN="\033[1;32m"
+RED="\033[0;31m"
+LIGHT_RED="\033[1;31m"
+DEFAULT="\033[0m"
+
+install=( @INSTALL@ )
+script=( @SCRIPT@  )
+error=0
+
+echo -e "Start system configuration and installation...\n"
+
+for command in "${install[@]}"
+do
+  echo "\$ $command"
+  eval $command
+  status=$?
+  if [ $status -ne 0 ]; then
+    exit 1
+  fi
+done
+
+echo -e "Installation done.\n"
+
+for command in "${script[@]}"
+do
+  echo "\$ $command"
+  eval $command
+  status=$?
+  if [ $status -ne 0 ]; then
+    let error=1
+    echo -e "\n${LIGHT_RED}The command \"$command\" exited with $status.${DEFAULT}"
+  else
+    echo -e "\n${LIGHT_GREEN}The command \"$command\" exited with $status.${DEFAULT}"
+  fi
+done
+
+if [ $error -ne 0 ]; then
+  exit 1
+fi
+
+exit 0
