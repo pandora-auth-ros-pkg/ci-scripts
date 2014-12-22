@@ -6,4 +6,4 @@ export REPO_NAME="$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///'
 mkdir $REPO_DIR
 find . -maxdepth 1 -mindepth 1 -not -name ci-scripts -not -name $REPO_DIR -exec mv '{}' $REPO_DIR \;
 
-$JENKINS_SCRIPTS/jenkins/build/vagrant_build.py $WORKSPACE $REPO_DIR $*
+$JENKINS_SCRIPTS/vagrant_build/vagrant_build.py $WORKSPACE $REPO_DIR $*
