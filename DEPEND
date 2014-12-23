@@ -1,0 +1,23 @@
+jenkins-master:
+  - git
+  - python-requests
+  - python-yaml
+  - ros-hydro-ros
+  - ros-hydro-rosdoc-lite
+  python:
+    - argparse
+    - commands
+    - email
+    - imaplib
+    - smtplib
+
+jenkins-slave:
+  - git
+  - python-yaml
+  - vagrant
+  - virtulabox
+  python:
+    - vagrant
+    - fabric
+    - argparse
+    - subprocess
