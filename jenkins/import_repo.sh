@@ -25,4 +25,4 @@ git diff-index --quiet HEAD || git commit --author="$AUTHOR_ID" -m "$COMMIT_MESS
 git push origin hydro-devel
 
 # Update repos.yml
-$JENKINS_SCRIPTS/pandoradep/update_repos.py $WORKSPACE/$REPO_DIR $REPO_NAME $JENKINS_SCRIPTS/pandoradep/repos.yml
+pandoradep update $WORKSPACE/$REPO_DIR $REPO_NAME $JENKINS_SCRIPTS/pandoradep/repos.yml

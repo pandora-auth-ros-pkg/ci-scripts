@@ -10,6 +10,7 @@ jenkins-master:
     - email
     - imaplib
     - smtplib
+    - pandoradep
 
 jenkins-slave:
   - git
