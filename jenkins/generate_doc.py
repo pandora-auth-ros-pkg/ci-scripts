@@ -28,35 +28,35 @@ package_dirs = {}
 non_package_dirs = {}
 
 for root, dirs, files in os.walk(args.root_of_pkgs):
-  if 'package.xml' in files:
-    package_dirs[os.path.basename(root)] = root
+    if 'package.xml' in files:
+        package_dirs[os.path.basename(root)] = root
 
-  # for non ros packages try to find a manifest.yaml file
-  if 'manifest.yaml' in files:
-    non_package_dirs[os.path.basename(root)] = root
+    # for non ros packages try to find a manifest.yaml file
+    if 'manifest.yaml' in files:
+        non_package_dirs[os.path.basename(root)] = root
 
 if not os.path.isdir(args.output_dir):
-  os.mkdir(args.output_dir)
+    os.mkdir(args.output_dir)
 
 for package in package_dirs:
-  out_path = os.path.join(args.output_dir, package)
-  cmd = rosdoc + '-o ' + out_path + ' '+ package_dirs[package]
-  print '+', cmd
-  (status, output) = commands.getstatusoutput(cmd)
-  if status:
-    sys.stderr.write(output)
-    sys.exit(1)
-  print output
-  
-  # make index-msg.html default page for packages containing msgs
-  if 'communications' in package  or 'msgs' in package:
-    file = open(os.path.join(out_path,'html/.htaccess'), 'w')
-    file.write('DirectoryIndex index-msg.html\n')
-    file.close()  
+    out_path = os.path.join(args.output_dir, package)
+    cmd = rosdoc + '-o ' + out_path + ' ' + package_dirs[package]
+    print '+', cmd
+    (status, output) = commands.getstatusoutput(cmd)
+    if status:
+        sys.stderr.write(output)
+        sys.exit(1)
+    print output
+
+    # make index-msg.html default page for packages containing msgs
+    if 'communications' in package  or 'msgs' in package:
+        file = open(os.path.join(out_path, 'html/.htaccess'), 'w')
+        file.write('DirectoryIndex index-msg.html\n')
+        file.close()
 
 # we are documenting non ros packages
 for package in non_package_dirs:
-  out_path = os.path.join(args.output_dir, package)
-  generate_non_ros_doc.generate_doxygen(non_package_dirs[package], out_path)
+    out_path = os.path.join(args.output_dir, package)
+    generate_non_ros_doc.generate_doxygen(non_package_dirs[package], out_path)
 
 publish_doc(package_dirs.keys() + non_package_dirs.keys(), args.output_dir)
