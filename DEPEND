@@ -16,7 +16,7 @@ jenkins-slave:
   - git
   - python-yaml
   - vagrant
-  - virtulabox
+  - virtualbox
   python:
     - vagrant
     - fabric
