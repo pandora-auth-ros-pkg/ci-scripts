@@ -26,4 +26,4 @@ pandora_vision: [pandora_vision_landoltc, pandora_vision_msgs, pandora_vision_vi
   pandora_vision_qrcode, pandora_vision_predator, pandora_vision_hole_detector, pandora_vision_launchers,
   pandora_vision_datamatrix, pandora_vision, pandora_vision_hazmat, pandora_vision_support,
   pandora_vision_motion]
-pandora_visualization: [pandora_visualization]
+pandora_visualization: [pandora_runtime_visualization, pandora_visualization, pandora_interactive_markers]
