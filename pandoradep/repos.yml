@@ -1,3 +1,4 @@
+open_tld: [open_tld]
 pandora_audio: [pandora_kinect_audio_capture, pandora_audio_msgs, pandora_kinect_audio_processing,
   pandora_audio]
 pandora_common: [pandora_testing_tools, watchdog_msgs, remote_mutex, remote_mutex_msgs,
