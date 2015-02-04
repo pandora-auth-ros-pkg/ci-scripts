@@ -11,6 +11,9 @@ import os
 
 default_recipients = ['Chris Zalidis <zalidis@gmail.com>']
 
+from_list = [ 'Travis CI <notifications@travis-ci.org>',
+                'Travis CI <builds@travis-ci.org>']
+
 def get_credentials():
   credentials_file = os.getenv('CREDENTIALS_FILE')
   if not credentials_file:
@@ -31,7 +34,8 @@ def get_commit_from_mail(mail):
 
 def check_and_forward_mail(server, user, password, imap_port, smtp_port):
 
-  new_emails = imap_client.connect_and_check_imap(server, user, password, imap_port)
+  new_emails = imap_client.connect_and_check_imap(server, user, password,
+          imap_port, from_list)
 
   for mail in new_emails:
     commit_sha = get_commit_from_mail(mail)
@@ -39,7 +43,7 @@ def check_and_forward_mail(server, user, password, imap_port, smtp_port):
     commit_author = github_api.get_commit_author('pandora-auth-ros-pkg', 'pandora_ros_pkgs', commit_sha)
     recipients.append(commit_author)
 
-    print 'New mail, Subject:', mail['Subject'] 
+    print 'New mail, Subject:', mail['Subject']
 
     recipients += default_recipients
     smtp_client.send_mail(server, user, password, smtp_port, mail, mail['From'], set(recipients))
