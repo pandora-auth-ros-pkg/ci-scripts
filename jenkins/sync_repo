@@ -13,19 +13,32 @@ def main():
     parser = argparse.ArgumentParser(description='Sync a repo')
     parser.add_argument('working_dir', help='The working directory.')
     parser.add_argument('public_dir', help='Path to the public directory.')
+    parser.add_argument('--remove', action='store_true', help='Remove public files first.')
     parser.add_argument('--prefix', default='', help='A folder name to prefix \
                                                     to the synced folders.')
     parser.add_argument('--include-only', nargs='+', help='Include only these folders.')
 
     args = parser.parse_args()
 
+
     if args.include_only is not None:
         for folder in args.include_only:
+            if args.remove:
+                to_delete = os.path.join(args.public_dir, args.prefix, folder)
+                if os.path.exists(to_delete):
+                    print('Deleting %s...' % to_delete)
+                    distutils.dir_util.remove_tree(to_delete)
             print('Copying folder %s to %s...' % (folder, args.public_dir))
             distutils.dir_util.copy_tree(
                                 os.path.join(args.working_dir, folder),
                                 os.path.join(args.public_dir, args.prefix, folder))
     else:
+        if args.remove:
+            to_delete = os.path.join(args.public_dir, args.prefix)
+            if os.path.exists(to_delete):
+                print('Deleting old files in %s...' % to_delete)
+                distutils.dir_util.remove_tree(to_delete)
+
         print('Copying all folders under %s to %s...' % (args.working_dir,
                                                                 args.public_dir))
         distutils.dir_util.copy_tree(args.working_dir,
