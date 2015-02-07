@@ -2,6 +2,7 @@ jenkins-master:
   - git
   - python-requests
   - python-yaml
+  - python-setuptools
   - ros-hydro-ros
   - ros-hydro-rosdoc-lite
   python:
