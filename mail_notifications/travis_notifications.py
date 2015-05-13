@@ -9,7 +9,7 @@ import email
 import time
 import os
 
-default_recipients = ['Chris Zalidis <zalidis@gmail.com>']
+default_recipients = ['Christos Tsirigotis <tsirif@gmail.com>']
 
 from_list = [ 'Travis CI <notifications@travis-ci.org>',
                 'Travis CI <builds@travis-ci.org>']
