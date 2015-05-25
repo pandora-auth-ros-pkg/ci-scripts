@@ -4,7 +4,8 @@ pandora_audio: [pandora_kinect_audio_capture, pandora_audio_msgs, pandora_kinect
 pandora_common: [pandora_testing_tools, watchdog_msgs, remote_mutex, remote_mutex_msgs,
   pandora_common, pandora_cmake_tools, pandora_common_msgs, state_manager_msgs, state_manager,
   kinect_movement_filter, watchdog, sensor_processor]
-pandora_control: [pandora_control, pandora_stabilizer, pandora_motor_control, pandora_end_effector_planner]
+pandora_control: [pandora_motor_control, pandora_linear_movement_controller, pandora_control,
+  pandora_stabilizer, pandora_end_effector_controller, pandora_sensor_orientation_controller]
 pandora_data_fusion: [pandora_data_fusion, pandora_data_fusion_launchers, pandora_data_fusion_msgs,
   pandora_sensor_processing, pandora_alert_handler]
 pandora_diagnostics: [pandora_diagnostics_launchers, pandora_interface_diagnostics,
