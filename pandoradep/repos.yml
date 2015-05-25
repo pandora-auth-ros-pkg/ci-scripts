@@ -30,3 +30,5 @@ pandora_vision: [pandora_vision_landoltc, pandora_vision_msgs, pandora_vision_vi
   pandora_vision_support, pandora_vision_motion, pandora_vision_common]
 pandora_visualization: [pandora_runtime_visualization, pandora_geotiff_plugins, pandora_visualization,
   pandora_geotiff, pandora_interactive_markers]
+pandora_kobuki: []
+pandora_exploration: []
