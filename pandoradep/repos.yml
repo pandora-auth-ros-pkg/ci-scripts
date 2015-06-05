@@ -2,8 +2,8 @@ open_tld: [open_tld]
 pandora_audio: [pandora_kinect_audio_capture, pandora_audio_msgs, pandora_kinect_audio_processing,
   pandora_audio]
 pandora_common: [pandora_testing_tools, watchdog_msgs, remote_mutex, remote_mutex_msgs,
-  pandora_common, pandora_gui_msgs, pandora_common_msgs, state_manager_msgs, state_manager,
-  kinect_movement_filter, watchdog, pandora_cmake_tools, sensor_processor]
+  pandora_common, pandora_gui_msgs, pandora_common_msgs, distrib_msgs, state_manager_msgs,
+  state_manager, kinect_movement_filter, watchdog, pandora_cmake_tools, sensor_processor]
 pandora_control: [pandora_motor_control, pandora_linear_movement_controller, pandora_control,
   pandora_stabilizer, pandora_end_effector_controller, pandora_sensor_orientation_controller]
 pandora_data_fusion: [pandora_data_fusion, pandora_data_fusion_launchers, pandora_data_fusion_msgs,
