@@ -27,9 +27,9 @@ pandora_navigation: [pandora_costmap, pandora_navigation_msgs, pandora_move_base
 pandora_rqt_gui: [pandora_rqt_gui]
 pandora_slam: [pandora_slam, pandora_slam_3d, pandora_pose_estimation, pandora_slam_2d]
 pandora_testing: [pandora_integration_testing, pandora_testing]
-pandora_vision: [pandora_vision_hole_exploration, pandora_vision_landoltc, pandora_vision_msgs,
-  pandora_vision_victim, pandora_vision_qrcode, pandora_vision_predator, pandora_vision_annotator,
-  pandora_vision_launchers, pandora_vision_datamatrix, pandora_vision, pandora_vision_hazmat,
-  pandora_vision_hole, pandora_vision_support, pandora_vision_motion, pandora_vision_common]
+pandora_vision: [pandora_vision_landoltc, pandora_vision_msgs, pandora_vision_victim,
+  pandora_vision_qrcode, pandora_vision_predator, pandora_vision_annotator, pandora_vision_launchers,
+  pandora_vision_datamatrix, pandora_vision, pandora_vision_hazmat, pandora_vision_hole,
+  pandora_vision_support, pandora_vision_motion, pandora_vision_common]
 pandora_visualization: [pandora_runtime_visualization, pandora_geotiff_plugins, pandora_visualization,
   pandora_geotiff, pandora_interactive_markers]
