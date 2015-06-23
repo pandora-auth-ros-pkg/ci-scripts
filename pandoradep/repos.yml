@@ -21,7 +21,8 @@ pandora_hardware_interface: [pandora_dynamixel_hardware_interface, pandora_linea
   pandora_hardware_interface]
 pandora_kobuki: [pandora_kobuki]
 pandora_launchers: [pandora_launchers]
-pandora_models: [pandora_sensors_description, pandora_models, pandora_robots_description]
+pandora_models: [pandora_sensors_description, pandora_robots_description, pandora_models,
+  pandora_urdf_properties]
 pandora_navigation: [pandora_costmap, pandora_navigation_msgs, pandora_move_base,
   pandora_navigation]
 pandora_rqt_gui: [pandora_rqt_gui]
