@@ -13,8 +13,8 @@ pandora_diagnostics: [pandora_diagnostics_launchers, pandora_interface_diagnosti
 pandora_exploration: [pandora_exploration, pandora_sensor_planner, pandora_exploration_msgs,
   pandora_sensor_coverage, pandora_explorer]
 pandora_fsm: [pandora_fsm]
-pandora_gazebo: [pandora_gazebo, pandora_gazebo_description, pandora_gazebo_controllers,
-  pandora_gazebo_plugins, pandora_gazebo_interface, pandora_gazebo_worlds]
+pandora_gazebo: [pandora_gazebo_worlds, pandora_gazebo_plugins, pandora_gazebo_interface,
+  pandora_gazebo_description, pandora_gazebo]
 pandora_hardware_interface: [pandora_dynamixel_hardware_interface, pandora_linear_motor_hardware_interface,
   pandora_sensor_msgs, pandora_arm_hardware_interface, pandora_hardware_tools, pandora_imu_hardware_interface,
   pandora_xmega_hardware_interface, pandora_motor_hardware_interface, pandora_leddar_hardware_interface,
