@@ -32,5 +32,5 @@ pandora_vision: [pandora_vision_landoltc, pandora_vision_msgs, pandora_vision_vi
   pandora_vision_obstacle, pandora_vision_qrcode, pandora_vision_predator, pandora_vision_annotator,
   pandora_vision_launchers, pandora_vision_datamatrix, pandora_vision, pandora_vision_hazmat,
   pandora_vision_hole, pandora_vision_support, pandora_vision_motion, pandora_vision_common]
-pandora_visualization: [pandora_runtime_visualization, pandora_geotiff_plugins, pandora_visualization,
-  pandora_geotiff, pandora_interactive_markers]
+pandora_visualization: [pandora_runtime_visualization, pandora_visualization, pandora_geotiff,
+  pandora_qr_csv, pandora_interactive_markers]
