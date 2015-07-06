@@ -15,10 +15,10 @@ pandora_exploration: [pandora_exploration, pandora_sensor_planner, pandora_explo
 pandora_fsm: [pandora_fsm]
 pandora_gazebo: [pandora_gazebo_worlds, pandora_gazebo_plugins, pandora_gazebo_interface,
   pandora_gazebo_description, pandora_gazebo]
-pandora_hardware_interface: [pandora_dynamixel_hardware_interface, pandora_linear_motor_hardware_interface,
-  pandora_sensor_msgs, pandora_arm_hardware_interface, pandora_hardware_tools, pandora_imu_hardware_interface,
-  pandora_xmega_hardware_interface, pandora_motor_hardware_interface, pandora_leddar_hardware_interface,
-  pandora_hardware_interface]
+pandora_hardware_interface: [pandora_dynamixel_hardware_interface, pandora_sensor_msgs,
+  pandora_arm_hardware_interface, pandora_imu_hardware_interface, pandora_hardware_tools,
+  pandora_linear_actuator_hardware_interface, pandora_xmega_hardware_interface, pandora_motor_hardware_interface,
+  pandora_leddar_hardware_interface, pandora_hardware_interface]
 pandora_kobuki: [pandora_kobuki]
 pandora_launchers: [pandora_launchers]
 pandora_models: [pandora_sensors_description, pandora_robots_description, pandora_models,
