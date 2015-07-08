@@ -6,8 +6,9 @@ pandora_common: [pandora_testing_tools, watchdog_msgs, remote_mutex, remote_mute
   state_manager, kinect_movement_filter, watchdog, pandora_cmake_tools, sensor_processor]
 pandora_control: [pandora_linear_actuator_controller, pandora_control, pandora_teleop,
   pandora_stabilizer, pandora_end_effector_controller, pandora_sensor_orientation_controller]
-pandora_data_fusion: [pandora_data_fusion_msgs, pandora_sensor_processing, pandora_data_fusion_launchers,
-  pandora_data_fusion_utils, pose_finder, pandora_data_fusion, pandora_alert_handler]
+pandora_data_fusion: [frame_matcher, pandora_data_fusion_msgs, pandora_sensor_processing,
+  pandora_data_fusion_launchers, pandora_data_fusion_utils, pose_finder, pandora_data_fusion,
+  pandora_alert_handler]
 pandora_diagnostics: [pandora_diagnostics_launchers, pandora_interface_diagnostics,
   pandora_bounds_diagnostics, interface_tester]
 pandora_exploration: [pandora_exploration, pandora_sensor_planner, pandora_exploration_msgs,
