@@ -67,8 +67,8 @@ if __name__ == '__main__':
     parser.add_argument('repo_root', help='The root directory of the repo that we are testing. \
                                               A .jenkins.yml file should be found there.')
     parser.add_argument('--image', help='The os image that vagrant should use. \
-                                        Default value is "ubuntu/precise64".',
-                                                        default='ubuntu/precise64')
+                                        Default value is "ubuntu/trusty64".',
+                                                        default='ubuntu/trusty64')
     parser.add_argument('--cpus', help='Number of cpu cores for vagrant to use. \
                                                               Default value is 2.',
                                                                 default='2')

@@ -71,4 +71,4 @@ def prepare_bash(yml_filename, out_filename):
 
 if __name__ == '__main__':
     prepare_bash('.jenkins.yml', 'test.bash')
-    prepare_vagrant('Vagrantfile', 'ubuntu/precise64')
+    prepare_vagrant('Vagrantfile', 'ubuntu/trusty64')
